@@ -25,10 +25,42 @@ fun isUnique(input: String): Boolean {
     return true
 }
 
-// test function
+// test isUnique function
 fun main(args: Array<String>) {
-    var falseInput = "RaceCar"
-    var trueInput = "Jason"
-    println(isUnique(falseInput))
-    println(isUnique(trueInput))
+//    var falseInput = "RaceCar"
+//    var trueInput = "Jason"
+//    println(isUnique(falseInput))
+//    println(isUnique(trueInput))
+//
+    var input = "Jason"
+    var input2 = "nosaJ"
+
+    println(isPermutation(input, input2))
+
 }
+
+fun isPermutation(input: String, input2: String): Boolean {
+    // we know something is a permutation if it contains all of the same chars with the same frequency
+    // the easiest way to determine this is to first check if inputs are same length
+    // if they are then use a hash map to store the fequency of all the characters
+    // check hashmaps for equality
+
+    if (input.length != input2.length) return false
+
+    var map = mutableMapOf<Char, Int>()
+    var map2 = mutableMapOf<Char, Int>()
+
+    for (char in input){
+        map.put(char, map.getOrDefault(char, 0) + 1)
+    }
+    for (char in input2){
+        map.put(char, map.getOrDefault(char, 0) + 1)
+    }
+
+    if (map == map2){
+        return true
+    }
+
+    return false
+}
+
