@@ -1,4 +1,7 @@
 /**
+ * Created by jr69473 on 5/29/17.
+ */
+/**
  * Created by jr69473 on 5/28/17.
  */
 
@@ -54,7 +57,7 @@ fun isPermutation(input: String, input2: String): Boolean {
         map.put(char, map.getOrDefault(char, 0) + 1)
     }
     for (char in input2){
-        map.put(char, map.getOrDefault(char, 0) + 1)
+        map2.put(char, map2.getOrDefault(char, 0) + 1)
     }
 
     if (map == map2){
